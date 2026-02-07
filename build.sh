@@ -1,1 +1,1 @@
-python3 src/main.py "/AlyBootHTML/"
+python3 src/main.py
