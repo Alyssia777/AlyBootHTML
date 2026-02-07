@@ -8,8 +8,8 @@ from generate_page import generate_pages_recursive
 
 dir_path_static = "./static"
 dir_path_public = "./docs"
-if argv[0] == "":
-    basepath = argv[0]
+if len(argv) > 1:
+    basepath = argv[1]
 else:
     basepath = "/"
 
