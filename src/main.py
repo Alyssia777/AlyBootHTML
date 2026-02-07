@@ -1,13 +1,17 @@
 import os
 import shutil
+from sys import argv
 
 from copystatic import copy_files_recursive
 from generate_page import generate_pages_recursive
 
 
 dir_path_static = "./static"
-dir_path_public = "./public"
-
+dir_path_public = "./docs"
+if argv[0] == "":
+    basepath = argv[0]
+else:
+    basepath = "/"
 
 def main():
     print("Deleting public directory...")
@@ -21,7 +25,8 @@ def main():
     generate_pages_recursive(
         dir_path_content="./content",
         template_path="./template.html",
-        dest_dir_path="./public"
+        dest_dir_path="./docs",
+        basepath=basepath
     )
     
 main()
